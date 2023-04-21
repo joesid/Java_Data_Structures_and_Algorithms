@@ -4,9 +4,10 @@ public class DaysBetweenDates_ex {
     public static void main(String[] args)
     {
 
-    
-
-
+      DaysBetweenDates_ex lt = new DaysBetweenDates_ex();
+      int[] result = lt.daysBetweenDates(2012, 9, 30, 2012, 10, 30);
+      
+      System.out.println(result[0]);
     }
 
 
@@ -71,4 +72,8 @@ public class DaysBetweenDates_ex {
     int[] No_of_day = {no_of_days};
         return No_of_day;
     }
-}
+  }
+    
+ 
+
+  
