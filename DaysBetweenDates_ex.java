@@ -39,6 +39,38 @@ public class DaysBetweenDates_ex {
        
     }
 
+    public boolean dateIsBefore(int year1, int month1,int day1, int year2, int month2, int day2)
+    {
+       boolean isDayb4 = false;
+      
+
+       if (year2 > year1)
+       {
+        isDayb4 = true;
+       }
+       else if (year2 < year1)
+       {
+        isDayb4 = false;
+       }
+       else if ((year2 == year1 ) && (month2 > month1 ))
+       {
+        isDayb4 = true;
+       }
+       else if ((year2 == year1) && (month2 < month1 ))
+       {
+        isDayb4 = false;
+       }
+      else if (((year2 == year1) && ( month2 == month1)) && (day2 > day1))
+       {
+         isDayb4 = true;
+       }
+       else if  (((year2 == year1) && ( month2 == month1)) && (day2 < day1))
+       {
+        isDayb4 = false;
+       }
+
+      return isDayb4;
+    }
 
     public int[] daysBetweenDates(int year1, int month1, int day1,int  year2, int month2, int day2)
     //Function that chects for the number of days between 2 different dates
@@ -47,6 +79,10 @@ public class DaysBetweenDates_ex {
       int total_month = month2 - month1;
       int no_of_days = 0;
       int day_bet_yr = 0;
+
+
+      String value = Boolean.toString(dateIsBefore(year1, month1, day1, year2, month2, day2));
+      System.out.println(value);
 
       if (year2 == year1 && month2 == month1)
       // if the 2 years are the same and month is the same 
