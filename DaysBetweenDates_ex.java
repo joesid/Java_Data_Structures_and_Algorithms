@@ -5,7 +5,7 @@ public class DaysBetweenDates_ex {
     {
 
       DaysBetweenDates_ex lt = new DaysBetweenDates_ex();
-      int[] result = lt.daysBetweenDates(2012, 9, 30, 2012, 10, 30);
+      int[] result = lt.daysBetweenDates(2013, , 30, 2012, 10, 30);
       
       System.out.println(result[0]);
     }
@@ -72,6 +72,30 @@ public class DaysBetweenDates_ex {
       return isDayb4;
     }
 
+
+    public boolean dateIs(int year1, int month1, int day1, int year2, int month2, int day2)
+    {
+      boolean isDayb4 = false;
+      
+      if (year1 < year2)
+          isDayb4 = true;
+      else if (year1 == year2)
+      {
+        if (month1 < month2)
+        {
+          isDayb4 = true;
+        }
+        else if (month1 == month2)
+        {
+          isDayb4 = day1 < day2;
+        }
+      }
+      else isDayb4 = false;
+      
+
+      return isDayb4;
+    }
+
     public int[] daysBetweenDates(int year1, int month1, int day1,int  year2, int month2, int day2)
     //Function that chects for the number of days between 2 different dates
     {
@@ -81,7 +105,7 @@ public class DaysBetweenDates_ex {
       int day_bet_yr = 0;
 
 
-      String value = Boolean.toString(dateIsBefore(year1, month1, day1, year2, month2, day2));
+      //String value = Boolean.toString(dateIsBefore(year1, month1, day1, year2, month2, day2));
       System.out.println(value);
 
       if (year2 == year1 && month2 == month1)
