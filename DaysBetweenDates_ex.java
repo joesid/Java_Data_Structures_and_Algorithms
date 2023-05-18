@@ -5,7 +5,7 @@ public class DaysBetweenDates_ex {
     {
 
       DaysBetweenDates_ex lt = new DaysBetweenDates_ex();
-      int[] result = lt.daysBetweenDates(2012, 2, 5, 2014, 2, 12);
+      int[] result = lt.daysBetweenDates(2012, 9, 1, 2012, 9, 4);
       
       System.out.println(result[0]);
     }
@@ -97,10 +97,12 @@ public class DaysBetweenDates_ex {
       {
         //day_bet_yr = (int)Math.pow( 30 * 12, total_years);
         //no_of_days = (day2 - day1) + day_bet_yr;
-        int day_yr = ((year2 - year1) - 1) * 30;
+        int day_yr = ((year2 - year1) - 1) * 360;
+        System.out.println(day_yr);
         int firstyr_days = ((12 - month1) * 30 )+ (30 - day1);
         int secondyr_days = (month2 * 30) - (30 - day2);
         no_of_days = day_yr + firstyr_days + secondyr_days;
+       
       }
 
    /*   else if (year2 > year1 && month2 > month1)
