@@ -68,12 +68,11 @@ public class DaysBetweenDates_ex {
     }
 
     public int[] daysBetweenDates(int year1, int month1, int day1,int  year2, int month2, int day2)
-    //Function that chects for the number of days between 2 different dates
+    //Function that checks for the number of days between 2 different dates
     {
-      int total_years = year2 - year1;
-      int total_month = month2 - month1;
+  
       int no_of_days = 0;
-      int day_bet_yr = 0;
+    
 
 
       String value = Boolean.toString(dateIsBefore(year1, month1, day1, year2, month2, day2));
@@ -88,7 +87,6 @@ public class DaysBetweenDates_ex {
 
       else if (year2 == year1 && month2 > month1)
       {
-        //no_of_days = (total_month * 30) + (30 - day1) + (30 - day2);
         no_of_days = daysleft(month1, month2, day1) + (day2 - 1);
       }
 
@@ -105,19 +103,7 @@ public class DaysBetweenDates_ex {
        
       }
 
-   /*   else if (year2 > year1 && month2 > month1)
-      {
-        day_bet_yr = (int)Math.pow(30*12, total_years);
-        //no_of_days = (int)Math.pow(30 * 2, total_years) + (total_month * 30) + (30 - day1) + (30 - day2);  
-        no_of_days = (30 *2)*total_years + (total_month * 30) + (30 - day1) + (30 - day2);
-        }
-      else if (year2 > year1 && month2 < month1)
-      {
-        day_bet_yr = (int)Math.pow(30 * 12, total_years);
-        //no_of_days = 
-      }
 
-*/
     int[] No_of_day = {no_of_days};
         return No_of_day;
     }
