@@ -45,7 +45,7 @@ int[] nextDay(int year, int month, int day)
 {
    
     int day_c = daysInMonth_ly(year, month);
-
+    
     if (day < day_c)
     {
      day +=1;
@@ -74,6 +74,7 @@ int daysleft(int year, int month,int day)
 }
 
 int daysBtwnMonth(int year, int month1, int month2)
+// finds the number of days within two seperate months in the same year
 {
   int total_days = 0;
   
@@ -115,6 +116,7 @@ return total_days;
 }
 
 int dayRemYear(int month,int year)
+//finds the number of days remaining in a year after a given month
 {
   int t_days =0;
   int day = 0;
@@ -148,6 +150,7 @@ int dayRemYear(int month,int year)
 }
 
 int sec_yr(int year, int month){
+  //finds the number of days before the month of the 2nd date in it's year 
   int day = 0;
   int t_day = 0;
   
@@ -167,12 +170,15 @@ int dayBetweenDate(int year2, int month2, int day2, int year1, int month1, int d
   int day_years = daysBtwnYear(year1, year2);
   
   if ((year2 == year1) && (month2 == month1)){
+    //if dates have the same year and month
     day_num = day2 - day1;
   }
   else if ((year2 == year1) && (month2 > month1)){
+    //if dates have the same year, but different month
     day_num = daysBtwnMonth(year1,month2, month1) + (day_month2 - (day_month2 - day2));
   }
   else if ((year2 > year1)){
+    //if dates have different years
     day_num = day_years + (day_month1 - day1) + dayRemYear(month1, year1) + sec_yr(year2, month2) + (day_month2 - (day_month2 - day2));
   }
 
