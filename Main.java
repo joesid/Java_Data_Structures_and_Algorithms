@@ -1,8 +1,22 @@
+import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] arg)
     {   
+       
+       dayBtwn();
+
+        System.out.println("This is currently the entry point for this code");
+
+    }
+
+
+    static void dayBtwn(){
+
+   
+
+
         DaysBetweenDates_Quiz quiz1 = new DaysBetweenDates_Quiz();
         boolean lp = quiz1.isLeapYear(2012);
 
@@ -38,7 +52,7 @@ public class Main {
         System.out.println("print next day out " + nextDay[0] + " " + nextDay[1] + " " + nextDay[2]);
 
         System.out.println("The value of month val is: " + monthval);
-
-        System.out.println("This is currently the entry point for this code");
     }
 }
+
+
